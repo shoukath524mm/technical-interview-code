@@ -14,11 +14,13 @@ use App\Http\Controllers\Job;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware(['cors'])->group(function () {
+//Route::middleware(['cors'])->group(function () {
 
 
-    Route::post('/jobs',  'Job@store');
+    Route::post('jobs',  [Job::class,'store']);
 
-    Route::get('/jobs',  'Job@index');
+    Route::view('jobs',  'jobg3');
 
-});
+    Route::view('example',  'example');
+
+//});
